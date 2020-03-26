@@ -1,0 +1,24 @@
+# Editing the book
+
+This is a _sample_ book written in **Markdown**. You can use any formatting code that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+
+To edit the book, you can change the text in the `.Rmd` files. Each Rmd file should contain **one and only one** chapter. A chapter is defined by the first-level heading `#`, e.g.:
+
+`# Editing the book`
+
+Any sub-headings within the chapter are indicated with several `#` signs, e.g., `##` (level 2) and `###` (level 3).
+
+## Creating new chapters
+
+To create a new chapter, you must follow two steps: 1) Create the file, and 2) Include it in the list of chapters.
+
+First, to create the file for a new chapter in Rstudio, click `File > New File > Text file`. At the top of the file, write your chapter heading, as explained above. Then, click `File > Save`. Save the file as `.Rmd`, without spaces in the file name, e.g.: `editing_the_book.Rmd`.
+
+Second, to include it in the list of chapters, open the file `_bookdown.yml` (click it in the Files explorer in the bottom right of Rstudio). This file has a list of `.Rmd` files to be included in the book. In this example, the list looks like this:
+
+```{r, results = "asis"}
+tmp <- readLines("_bookdown.yml")
+cat(tmp[grep("^rmd_files", tmp):grep("references\\.Rmd", tmp)], sep = "\n")
+```
+
+Insert the file name of your new chapter in the desired position in this list.
