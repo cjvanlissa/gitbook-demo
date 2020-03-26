@@ -1,0 +1,15 @@
+# Examples
+
+Here are some examples of other GitBooks for courses; if you want to have your GitBook added to the list, please send a [Pull Request](https://github.com/cjvanlissa/gitbook-demo/pulls) (here's [how to send a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)).
+
+## Doing Meta-Analysis in R
+
+<http://cjvanlissa.github.io/Doing-Meta-Analysis-in-R>
+
+A GitBook on doing meta-analysis in R, based on the book ‘Doing Meta-Analysis in R’, by Mathias Harrer, Pim Cuijpers, & David Ebert, and adapted to focus on the [metafor](https://cran.r-project.org/web/packages/metafor/index.html) package, and exploring heterogeneity using [metaforest](https://cran.r-project.org/web/packages/metaforest/index.html). The original can be found here: https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/
+
+## Theory Construction and Statistical Modeling
+
+<<http://cjvanlissa.github.io/TCSM>
+
+A GitBook for the course *"Theory Construction and Statistical Modeling"*, with some interesting code, for example: Blocks of answers to the tutorial questions that can be collapsed and expanded.

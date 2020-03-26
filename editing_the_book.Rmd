@@ -1,10 +1,18 @@
 # Editing the book
 
-This is a _sample_ book written in **Markdown**. You can use any formatting code that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+The contents of the book are written in **RMarkdown**. You can use any formatting code that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$. Moreover, you can include chunks of R-code, like this:
 
-To edit the book, you can change the text in the `.Rmd` files. Each Rmd file should contain **one and only one** chapter. A chapter is defined by the first-level heading `#`, e.g.:
+<pre><code>```{r}
+print("This is an R-command!")
+```</code></pre>
 
-`# Editing the book`
+The results of these chunks can be rendered to the GitBook:
+
+```{r, echo = FALSE}
+print("This is an R-command!")
+```
+
+To edit the book, you can change the text in the `.Rmd` files. Each Rmd file should contain **one and only one** chapter. A chapter is defined by the first-level heading `#`, e.g., `# Editing the book`.
 
 Any sub-headings within the chapter are indicated with several `#` signs, e.g., `##` (level 2) and `###` (level 3).
 
@@ -22,3 +30,11 @@ cat(tmp[grep("^rmd_files", tmp):grep("references\\.Rmd", tmp)], sep = "\n")
 ```
 
 Insert the file name of your new chapter in the desired position in this list.
+
+## Linking across chapters
+
+You can label chapter and section titles using `{#label}` after them. The labels can be used as cross-references. For example, we can link to Chapter \@ref(figtab). If you do not manually label chapters, there will be automatic labels anyway, e.g., Chapter \@ref(examples).
+
+## Advanced editing
+
+The convenient [Rmarkdown Cheat Sheet](https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) by Rstudio covers most of the knowledge required for advanced Rmarkdown editing. You can print it out and stick it to your wall!

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A GitBook Example for Teaching</title>
+  <title>Chapter 5 Examples | A GitBook Example for Teaching</title>
   <meta name="description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A GitBook Example for Teaching" />
+  <meta property="og:title" content="Chapter 5 Examples | A GitBook Example for Teaching" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="cjvanlissa/gitbook-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A GitBook Example for Teaching" />
+  <meta name="twitter:title" content="Chapter 5 Examples | A GitBook Example for Teaching" />
   
   <meta name="twitter:description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="get-your-gitbook.html"/>
+<link rel="prev" href="figtab.html"/>
+<link rel="next" href="license-your-gitbook.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -165,73 +165,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A GitBook Example for Teaching</h1>
-<p class="author"><em><a href="https://www.uu.nl/staff/CJvanLissa">dr. Caspar J. van Lissa</a></em></p>
-<p class="date"><em>2020-03-26</em></p>
+<div id="examples" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Examples</h1>
+<p>Here are some examples of other GitBooks for courses; if you want to have your GitBook added to the list, please send a <a href="https://github.com/cjvanlissa/gitbook-demo/pulls">Pull Request</a> (here’s <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">how to send a pull request</a>).</p>
+<div id="doing-meta-analysis-in-r" class="section level2">
+<h2><span class="header-section-number">5.1</span> Doing Meta-Analysis in R</h2>
+<p><a href="http://cjvanlissa.github.io/Doing-Meta-Analysis-in-R" class="uri">http://cjvanlissa.github.io/Doing-Meta-Analysis-in-R</a></p>
+<p>A GitBook on doing meta-analysis in R, based on the book ‘Doing Meta-Analysis in R’, by Mathias Harrer, Pim Cuijpers, &amp; David Ebert, and adapted to focus on the <a href="https://cran.r-project.org/web/packages/metafor/index.html">metafor</a> package, and exploring heterogeneity using <a href="https://cran.r-project.org/web/packages/metaforest/index.html">metaforest</a>. The original can be found here: <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/" class="uri">https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/</a></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This GitBook is created in Rstudio, using the <code>bookdown</code> package. To get your system set up correctly, you have to install several software packages, and register on GitHub. You only have to perform these steps once, and the entire process should take approximately 1 hour if you start from scratch. In case some software is already installed on your system, you can skip related steps. Follow these steps in order:</p>
-<ol style="list-style-type: decimal">
-<li>Install R from <a href="https://cloud.r-project.org/">cloud.r-project.org</a></li>
-<li>Install Rstudio Desktop (Free) from <a href="https://rstudio.com/products/rstudio/download/#download">rstudio.com</a>
-<!-- ALWAYS RUN AS ADMIN -->
-<!-- install rtools --></li>
-<li>Install Git from <a href="https://git-scm.com/downloads">git-scm.com</a>. Use the default, recommended settings. It is especially important to leave these settings selected:
-<ul>
-<li>Git from the command line and also from third party software<br />
-</li>
-<li>Use the OpenSSL library<br />
-<!--*For secure data transfer with GitHub*--></li>
-<li>Checkout Windows-style, commit Unix-style line endings<br />
-<!--*This is the preferred setting when collaborating with others on different platforms. Be prepared that, on windows, you will receive harmless notifications about LF to CRLF line endings.  *--></li>
-<li>Enable Git Credential Manager<br />
-<!--*For logging in to GitHub*--></li>
-<li>If you run into any trouble, a more comprehensive tutorial on installing Git is available at <a href="https://happygitwithr.com/install-git.html">happygitwithr.com</a>.</li>
-</ul></li>
-<li>Register on GitHub
-<ul>
-<li>Go to <a href="https://github.com/">github.com</a> and click “Sign up”. Choose an “Individual”, “Free” plan.</li>
-<li>Request a <a href="https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount">free academic upgrade</a>. This allows you to create <em>private repositories</em>, which are only visible to you and selected collaborators, and can be made public when your work is published.</li>
-</ul></li>
-<li>Connect Rstudio to Git and Github (for more support, see <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">this Rstudio article</a>, and <a href="https://www.r-bloggers.com/rstudio-and-github/">this blog post</a>)
-<ol style="list-style-type: lower-alpha">
-<li>Open Rstudio, open the Tools menu, click <em>Global Options</em>, and click <em>Git/SVN</em></li>
-<li>Verify that <em>Enable version control interface for RStudio projects</em> is selected</li>
-<li>Verify that <em>Git executable:</em> shows the location of git.exe. If it is missing, manually fix the location of the file.</li>
-<li>Click <em>Create RSA Key</em>. Do not enter a passphrase. Press <em>Create</em>. A window with some information will open, which you can close.</li>
-<li>Click <em>View public key</em>, and copy the entire text to the clipboard.</li>
-<li>Close Rstudio (it might offer to restart by itself; this is fine)</li>
-<li>Go to <a href="https://www.github.com">www.github.com</a></li>
-<li>Click your user icon, click <em>Settings</em>, and then select the <em>SSH and GPG keys</em> tab.</li>
-<li>Click <em>New SSH key</em>. Give it an arbitrary name (e.g., your computer ID), and paste the public key from your clipboard into the box labeled “<em>Key</em>”.</li>
-<li>Open Rstudio again (unless it restarted by itself)</li>
-</ol></li>
-<li>Install all required packages by running the following code in the Rstudio console. Be prepared for three contingencies:
-<ul>
-<li>If you receive any error saying <em>There is no package called XYZ</em>, then run the code <code>install.packages("XYZ")</code><br />
-</li>
-<li>If you are prompted to update packages, just press <code>3: None</code>. Updating packages this way in an interactive session sometimes leads to errors, if the packages are loaded.<br />
-</li>
-<li>If you see a pop-up dialog asking <em>Do you want to install from sources the package which needs compilation?</em>, click <em>No</em>. If this leads to errors, then please follow <em>Step 3</em> from <a href="https://cjvanlissa.github.io/worcs/articles/setup.html">this online guide</a>, and run <code>install.packages("devtools")</code>. This will take a long time, but will allow you to install packages from source.</li>
-</ul></li>
-</ol>
-<p>Run the following code to install the required packages:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">tinytex<span class="op">::</span><span class="kw">install_tinytex</span>()</a>
-<a class="sourceLine" id="cb1-4" title="4">git2r<span class="op">::</span><span class="kw">config</span>(<span class="dt">global =</span> <span class="ot">TRUE</span>, <span class="dt">user.name =</span> <span class="st">&quot;your.name&quot;</span>, <span class="dt">user.email =</span> <span class="st">&quot;your.email&quot;</span>)</a></code></pre></div>
-<p>That’s it! Everything should be installed and connected now.</p>
+<div id="theory-construction-and-statistical-modeling" class="section level2">
+<h2><span class="header-section-number">5.2</span> Theory Construction and Statistical Modeling</h2>
+<p>&lt;<a href="http://cjvanlissa.github.io/TCSM" class="uri">http://cjvanlissa.github.io/TCSM</a></p>
+<p>A GitBook for the course <em>“Theory Construction and Statistical Modeling”</em>, with some interesting code, for example: Blocks of answers to the tutorial questions that can be collapsed and expanded.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="get-your-gitbook.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="figtab.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="license-your-gitbook.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -262,7 +217,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/examples.Rmd",
 "text": "Edit"
 },
 "history": {

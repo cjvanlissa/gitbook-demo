@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Get your GitBook | A GitBook Example for Teaching</title>
-  <meta name="description" content="This GitBook for teaching is an adaptation of the minimal bookdown example by Yihui Xie, available at https://bookdown.org/yihui/bookdown-demo The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Get your GitBook | A GitBook Example for Teaching" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This GitBook for teaching is an adaptation of the minimal bookdown example by Yihui Xie, available at https://bookdown.org/yihui/bookdown-demo The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="cjvanlissa/gitbook-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 2 Get your GitBook | A GitBook Example for Teaching" />
   
-  <meta name="twitter:description" content="This GitBook for teaching is an adaptation of the minimal bookdown example by Yihui Xie, available at https://bookdown.org/yihui/bookdown-demo The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   
 
 <meta name="author" content="dr. Caspar J. van Lissa" />
@@ -128,22 +128,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">A GitBook for Teaching</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="get-your-gitbook.html"><a href="get-your-gitbook.html"><i class="fa fa-check"></i><b>2</b> Get your GitBook</a></li>
 <li class="chapter" data-level="3" data-path="editing-the-book.html"><a href="editing-the-book.html"><i class="fa fa-check"></i><b>3</b> Editing the book</a><ul>
 <li class="chapter" data-level="3.1" data-path="editing-the-book.html"><a href="editing-the-book.html#creating-new-chapters"><i class="fa fa-check"></i><b>3.1</b> Creating new chapters</a></li>
+<li class="chapter" data-level="3.2" data-path="editing-the-book.html"><a href="editing-the-book.html#linking-across-chapters"><i class="fa fa-check"></i><b>3.2</b> Linking across chapters</a></li>
+<li class="chapter" data-level="3.3" data-path="editing-the-book.html"><a href="editing-the-book.html#advanced-editing"><i class="fa fa-check"></i><b>3.3</b> Advanced editing</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>4</b> Introduction</a></li>
-<li class="chapter" data-level="5" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>5</b> Literature</a></li>
-<li class="chapter" data-level="6" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>6</b> Methods</a></li>
-<li class="chapter" data-level="7" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>7</b> Applications</a><ul>
-<li class="chapter" data-level="7.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>7.1</b> Example one</a></li>
-<li class="chapter" data-level="7.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>7.2</b> Example two</a></li>
+<li class="chapter" data-level="4" data-path="figtab.html"><a href="figtab.html"><i class="fa fa-check"></i><b>4</b> Figures and tables</a></li>
+<li class="chapter" data-level="5" data-path="examples.html"><a href="examples.html"><i class="fa fa-check"></i><b>5</b> Examples</a><ul>
+<li class="chapter" data-level="5.1" data-path="examples.html"><a href="examples.html#doing-meta-analysis-in-r"><i class="fa fa-check"></i><b>5.1</b> Doing Meta-Analysis in R</a></li>
+<li class="chapter" data-level="5.2" data-path="examples.html"><a href="examples.html#theory-construction-and-statistical-modeling"><i class="fa fa-check"></i><b>5.2</b> Theory Construction and Statistical Modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>8</b> Final Words</a></li>
+<li class="chapter" data-level="6" data-path="license-your-gitbook.html"><a href="license-your-gitbook.html"><i class="fa fa-check"></i><b>6</b> License your GitBook</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -186,9 +186,14 @@ This will copy my <code>gitbook-demo</code> repository to your GitHub account.<b
 <img src="img/files_editor.png" /></li>
 <li>After you make a change, it will show up in the Git tab (usually in the top right of Rstudio). You must Commit the change locally, and then Push the change to GitHub to update your repo. To Commit, select the file and click the Commit button. Write a short message to describe the changes you made, then click the Commit button again. Now, press Push to send your commits to GitHub.<br />
 <img src="img/commit_push.png" /></li>
-<li>To render your book as a GitBook, you must “Build” it. In the top-right panel of Rstudio, you see a “Build” tab. In this tab, simply click the “Build Book” button to build your book. You should see a lot of rendering messages, follow</li>
+<li>To render your book as a GitBook, you must “Build” it. In the top-right panel of Rstudio, you see a “Build” tab. In this tab, simply click the “Build Book” button to build your book. You should see a lot of rendering messages, until a window pops up with your brand new GitBook. If you get errors at this stage, you probably made a mistake in preparing your system (see the previous Chapter).<br />
+<img src="img/build_book.png" /></li>
+<li>Building the book generated a lot of new files in the <code>./docs</code> directory. This directory contains the website files for your GitBook. Open the Git tab again, verify that the <code>./docs</code> directory is listed, and Commit and Push all of these new files as described in <em>Step 9</em>.</li>
+<li>There is only one last remaining task: To publish your GitBook on GitHub pages. Once you do this, any change to the <code>./docs</code> folder that you push to GitHub will lead to an immediate update of your GitBook website. Go back to the GitHub page for your Repository. Click on the <code>Settings</code> tab on the top right of the page:<br />
+<img src="img/settings.png" /></li>
+<li>On the Settings page, scroll all the way down until you reach a section called <code>GitHub Pages</code>. There, under the “Source” heading, click the word <code>None</code>, and select <code>master branch /docs folder</code>. When you select it, the page will update, and if you scroll back down to the <code>GitHub Pages</code> section, you will see the URL where your GitBook is published. The first time, it will take a few minutes for your GitBook to come online. When you publish updates to the GitBook however (simply by following <em>Step 11</em> again), the update will be near-instantaneous. The Pages section should now look like this (and that is hopefully the link where you found this book):<br />
+<img src="img/pages_published.png" /></li>
 </ol>
-<p>The last remaining task is to publish your GitBook on GitHub pages. Once you do this, any change</p>
 
 </div>
             </section>

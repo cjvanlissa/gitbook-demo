@@ -1,3 +1,3 @@
 # Methods
 
-We describe our methods in this chapter.
+This Chapter is empty, and only exists to show that you can link to chapters by title.

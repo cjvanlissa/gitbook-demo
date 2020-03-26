@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A GitBook Example for Teaching</title>
+  <title>Chapter 4 Figures and tables | A GitBook Example for Teaching</title>
   <meta name="description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A GitBook Example for Teaching" />
+  <meta property="og:title" content="Chapter 4 Figures and tables | A GitBook Example for Teaching" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="cjvanlissa/gitbook-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A GitBook Example for Teaching" />
+  <meta name="twitter:title" content="Chapter 4 Figures and tables | A GitBook Example for Teaching" />
   
   <meta name="twitter:description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="get-your-gitbook.html"/>
+<link rel="prev" href="editing-the-book.html"/>
+<link rel="next" href="examples.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -165,73 +165,195 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A GitBook Example for Teaching</h1>
-<p class="author"><em><a href="https://www.uu.nl/staff/CJvanLissa">dr. Caspar J. van Lissa</a></em></p>
-<p class="date"><em>2020-03-26</em></p>
+<div id="figtab" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Figures and tables</h1>
+<p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
+<img src="bookdown-demo_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
+<p class="caption">
+Figure 4.1: Here is a nice figure!
+</p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This GitBook is created in Rstudio, using the <code>bookdown</code> package. To get your system set up correctly, you have to install several software packages, and register on GitHub. You only have to perform these steps once, and the entire process should take approximately 1 hour if you start from scratch. In case some software is already installed on your system, you can skip related steps. Follow these steps in order:</p>
-<ol style="list-style-type: decimal">
-<li>Install R from <a href="https://cloud.r-project.org/">cloud.r-project.org</a></li>
-<li>Install Rstudio Desktop (Free) from <a href="https://rstudio.com/products/rstudio/download/#download">rstudio.com</a>
-<!-- ALWAYS RUN AS ADMIN -->
-<!-- install rtools --></li>
-<li>Install Git from <a href="https://git-scm.com/downloads">git-scm.com</a>. Use the default, recommended settings. It is especially important to leave these settings selected:
-<ul>
-<li>Git from the command line and also from third party software<br />
-</li>
-<li>Use the OpenSSL library<br />
-<!--*For secure data transfer with GitHub*--></li>
-<li>Checkout Windows-style, commit Unix-style line endings<br />
-<!--*This is the preferred setting when collaborating with others on different platforms. Be prepared that, on windows, you will receive harmless notifications about LF to CRLF line endings.  *--></li>
-<li>Enable Git Credential Manager<br />
-<!--*For logging in to GitHub*--></li>
-<li>If you run into any trouble, a more comprehensive tutorial on installing Git is available at <a href="https://happygitwithr.com/install-git.html">happygitwithr.com</a>.</li>
-</ul></li>
-<li>Register on GitHub
-<ul>
-<li>Go to <a href="https://github.com/">github.com</a> and click “Sign up”. Choose an “Individual”, “Free” plan.</li>
-<li>Request a <a href="https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount">free academic upgrade</a>. This allows you to create <em>private repositories</em>, which are only visible to you and selected collaborators, and can be made public when your work is published.</li>
-</ul></li>
-<li>Connect Rstudio to Git and Github (for more support, see <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">this Rstudio article</a>, and <a href="https://www.r-bloggers.com/rstudio-and-github/">this blog post</a>)
-<ol style="list-style-type: lower-alpha">
-<li>Open Rstudio, open the Tools menu, click <em>Global Options</em>, and click <em>Git/SVN</em></li>
-<li>Verify that <em>Enable version control interface for RStudio projects</em> is selected</li>
-<li>Verify that <em>Git executable:</em> shows the location of git.exe. If it is missing, manually fix the location of the file.</li>
-<li>Click <em>Create RSA Key</em>. Do not enter a passphrase. Press <em>Create</em>. A window with some information will open, which you can close.</li>
-<li>Click <em>View public key</em>, and copy the entire text to the clipboard.</li>
-<li>Close Rstudio (it might offer to restart by itself; this is fine)</li>
-<li>Go to <a href="https://www.github.com">www.github.com</a></li>
-<li>Click your user icon, click <em>Settings</em>, and then select the <em>SSH and GPG keys</em> tab.</li>
-<li>Click <em>New SSH key</em>. Give it an arbitrary name (e.g., your computer ID), and paste the public key from your clipboard into the box labeled “<em>Key</em>”.</li>
-<li>Open Rstudio again (unless it restarted by itself)</li>
-</ol></li>
-<li>Install all required packages by running the following code in the Rstudio console. Be prepared for three contingencies:
-<ul>
-<li>If you receive any error saying <em>There is no package called XYZ</em>, then run the code <code>install.packages("XYZ")</code><br />
-</li>
-<li>If you are prompted to update packages, just press <code>3: None</code>. Updating packages this way in an interactive session sometimes leads to errors, if the packages are loaded.<br />
-</li>
-<li>If you see a pop-up dialog asking <em>Do you want to install from sources the package which needs compilation?</em>, click <em>No</em>. If this leads to errors, then please follow <em>Step 3</em> from <a href="https://cjvanlissa.github.io/worcs/articles/setup.html">this online guide</a>, and run <code>install.packages("devtools")</code>. This will take a long time, but will allow you to install packages from source.</li>
-</ul></li>
-</ol>
-<p>Run the following code to install the required packages:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">tinytex<span class="op">::</span><span class="kw">install_tinytex</span>()</a>
-<a class="sourceLine" id="cb1-4" title="4">git2r<span class="op">::</span><span class="kw">config</span>(<span class="dt">global =</span> <span class="ot">TRUE</span>, <span class="dt">user.name =</span> <span class="st">&quot;your.name&quot;</span>, <span class="dt">user.email =</span> <span class="st">&quot;your.email&quot;</span>)</a></code></pre></div>
-<p>That’s it! Everything should be installed and connected now.</p>
+<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="figtab.html#fig:nice-fig">4.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="figtab.html#tab:nice-tab">4.1</a>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb5-4" title="4">)</a></code></pre></div>
+<table>
+<caption><span id="tab:nice-tab">Table 4.1: </span>Here is a nice table!</caption>
+<thead>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+<th align="left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.7</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.6</td>
+<td align="right">3.4</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.4</td>
+<td align="right">2.9</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.7</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.8</td>
+<td align="right">3.4</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.8</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.3</td>
+<td align="right">3.0</td>
+<td align="right">1.1</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.8</td>
+<td align="right">4.0</td>
+<td align="right">1.2</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">4.4</td>
+<td align="right">1.5</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.3</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.7</td>
+<td align="right">3.8</td>
+<td align="right">1.7</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.1</td>
+<td align="right">3.8</td>
+<td align="right">1.5</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
+</tr>
+</tbody>
+</table>
+<p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span>.</p>
 
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-xie2015">
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.</p>
+</div>
+<div id="ref-R-bookdown">
+<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="get-your-gitbook.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="editing-the-book.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -262,7 +384,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/figures_tables.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -119,7 +119,7 @@
 \bibliographystyle{apalike}
 
 \title{A GitBook Example for Teaching}
-\author{dr. Caspar J. van Lissa}
+\author{\href{https://www.uu.nl/staff/CJvanLissa}{dr. Caspar J. van Lissa}}
 \date{2020-03-26}
 
 \begin{document}
@@ -132,7 +132,83 @@
 \hypertarget{prerequisites}{%
 \chapter{Prerequisites}\label{prerequisites}}
 
-This GitBook is created in Rstudio, using the \texttt{bookdown} package. To get your system set up correctly, I recommend that you follow the installation guide I've written for another package, available \href{https://cjvanlissa.github.io/worcs/articles/setup.html}{here}. \textbf{NOTE:} You should \emph{skip Step 3} in that guide (it will save you a lot of time), and instead of running the code in \emph{Step 7}, run the following code:
+This GitBook is created in Rstudio, using the \texttt{bookdown} package. To get your system set up correctly, you have to install several software packages, and register on GitHub. You only have to perform these steps once, and the entire process should take approximately 1 hour if you start from scratch. In case some software is already installed on your system, you can skip related steps. Follow these steps in order:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Install R from \href{https://cloud.r-project.org/}{cloud.r-project.org}
+\item
+  Install Rstudio Desktop (Free) from \href{https://rstudio.com/products/rstudio/download/\#download}{rstudio.com}
+\item
+  Install Git from \href{https://git-scm.com/downloads}{git-scm.com}. Use the default, recommended settings. It is especially important to leave these settings selected:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Git from the command line and also from third party software\\
+  \item
+    Use the OpenSSL library\\
+  \item
+    Checkout Windows-style, commit Unix-style line endings\\
+  \item
+    Enable Git Credential Manager\\
+  \item
+    If you run into any trouble, a more comprehensive tutorial on installing Git is available at \href{https://happygitwithr.com/install-git.html}{happygitwithr.com}.
+  \end{itemize}
+\item
+  Register on GitHub
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Go to \href{https://github.com/}{github.com} and click ``Sign up''. Choose an ``Individual'', ``Free'' plan.
+  \item
+    Request a \href{https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount}{free academic upgrade}. This allows you to create \emph{private repositories}, which are only visible to you and selected collaborators, and can be made public when your work is published.
+  \end{itemize}
+\item
+  Connect Rstudio to Git and Github (for more support, see \href{https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN}{this Rstudio article}, and \href{https://www.r-bloggers.com/rstudio-and-github/}{this blog post})
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Open Rstudio, open the Tools menu, click \emph{Global Options}, and click \emph{Git/SVN}
+  \item
+    Verify that \emph{Enable version control interface for RStudio projects} is selected
+  \item
+    Verify that \emph{Git executable:} shows the location of git.exe. If it is missing, manually fix the location of the file.
+  \item
+    Click \emph{Create RSA Key}. Do not enter a passphrase. Press \emph{Create}. A window with some information will open, which you can close.
+  \item
+    Click \emph{View public key}, and copy the entire text to the clipboard.
+  \item
+    Close Rstudio (it might offer to restart by itself; this is fine)
+  \item
+    Go to \href{https://www.github.com}{www.github.com}
+  \item
+    Click your user icon, click \emph{Settings}, and then select the \emph{SSH and GPG keys} tab.
+  \item
+    Click \emph{New SSH key}. Give it an arbitrary name (e.g., your computer ID), and paste the public key from your clipboard into the box labeled ``\emph{Key}''.
+  \item
+    Open Rstudio again (unless it restarted by itself)
+  \end{enumerate}
+\item
+  Install all required packages by running the following code in the Rstudio console. Be prepared for three contingencies:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you receive any error saying \emph{There is no package called XYZ}, then run the code \texttt{install.packages("XYZ")}\\
+  \item
+    If you are prompted to update packages, just press \texttt{3:\ None}. Updating packages this way in an interactive session sometimes leads to errors, if the packages are loaded.\\
+  \item
+    If you see a pop-up dialog asking \emph{Do you want to install from sources the package which needs compilation?}, click \emph{No}. If this leads to errors, then please follow \emph{Step 3} from \href{https://cjvanlissa.github.io/worcs/articles/setup.html}{this online guide}, and run \texttt{install.packages("devtools")}. This will take a long time, but will allow you to install packages from source.
+  \end{itemize}
+\end{enumerate}
+
+Run the following code to install the required packages:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -142,6 +218,8 @@ This GitBook is created in Rstudio, using the \texttt{bookdown} package. To get 
 \NormalTok{git2r}\OperatorTok{::}\KeywordTok{config}\NormalTok{(}\DataTypeTok{global =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"your.name"}\NormalTok{, }\DataTypeTok{user.email =} \StringTok{"your.email"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+That's it! Everything should be installed and connected now.
 
 \hypertarget{get-your-gitbook}{%
 \chapter{Get your GitBook}\label{get-your-gitbook}}
@@ -178,19 +256,30 @@ To get your GitBook, you should follow these steps:
   After you make a change, it will show up in the Git tab (usually in the top right of Rstudio). You must Commit the change locally, and then Push the change to GitHub to update your repo. To Commit, select the file and click the Commit button. Write a short message to describe the changes you made, then click the Commit button again. Now, press Push to send your commits to GitHub.\\
   \includegraphics{./img/commit_push.png}
 \item
-  To render your book as a GitBook, you must ``Build'' it. In the top-right panel of Rstudio, you see a ``Build'' tab. In this tab, simply click the ``Build Book'' button to build your book. You should see a lot of rendering messages, follow
+  To render your book as a GitBook, you must ``Build'' it. In the top-right panel of Rstudio, you see a ``Build'' tab. In this tab, simply click the ``Build Book'' button to build your book. You should see a lot of rendering messages, until a window pops up with your brand new GitBook. If you get errors at this stage, you probably made a mistake in preparing your system (see the previous Chapter).\\
+  \includegraphics{./img/build_book.png}
+\item
+  Building the book generated a lot of new files in the \texttt{./docs} directory. This directory contains the website files for your GitBook. Open the Git tab again, verify that the \texttt{./docs} directory is listed, and Commit and Push all of these new files as described in \emph{Step 9}.
+\item
+  There is only one last remaining task: To publish your GitBook on GitHub pages. Once you do this, any change to the \texttt{./docs} folder that you push to GitHub will lead to an immediate update of your GitBook website. Go back to the GitHub page for your Repository. Click on the \texttt{Settings} tab on the top right of the page:\\
+  \includegraphics{./img/settings.png}
+\item
+  On the Settings page, scroll all the way down until you reach a section called \texttt{GitHub\ Pages}. There, under the ``Source'' heading, click the word \texttt{None}, and select \texttt{master\ branch\ /docs\ folder}. When you select it, the page will update, and if you scroll back down to the \texttt{GitHub\ Pages} section, you will see the URL where your GitBook is published. The first time, it will take a few minutes for your GitBook to come online. When you publish updates to the GitBook however (simply by following \emph{Step 11} again), the update will be near-instantaneous. The Pages section should now look like this (and that is hopefully the link where you found this book):\\
+  \includegraphics{./img/pages_published.png}
 \end{enumerate}
-
-The last remaining task is to publish your GitBook on GitHub pages. Once you do this, any change
 
 \hypertarget{editing-the-book}{%
 \chapter{Editing the book}\label{editing-the-book}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use any formatting code that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
+The contents of the book are written in \textbf{RMarkdown}. You can use any formatting code that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\). Moreover, you can include chunks of R-code, like this:
 
-To edit the book, you can change the text in the \texttt{.Rmd} files. Each Rmd file should contain \textbf{one and only one} chapter. A chapter is defined by the first-level heading \texttt{\#}, e.g.:
+The results of these chunks can be rendered to the GitBook:
 
-\texttt{\#\ Editing\ the\ book}
+\begin{verbatim}
+## [1] "This is an R-command!"
+\end{verbatim}
+
+To edit the book, you can change the text in the \texttt{.Rmd} files. Each Rmd file should contain \textbf{one and only one} chapter. A chapter is defined by the first-level heading \texttt{\#}, e.g., \texttt{\#\ Editing\ the\ book}.
 
 Any sub-headings within the chapter are indicated with several \texttt{\#} signs, e.g., \texttt{\#\#} (level 2) and \texttt{\#\#\#} (level 3).
 
@@ -213,19 +302,25 @@ Second, to include it in the list of chapters, open the file \texttt{\_bookdown.
 rmd\_files: {[}``index.Rmd'',
 ``get\_your\_gitbook.Rmd'',
 ``editing\_the\_book.Rmd'',
-``intro.Rmd'',
-``literature.Rmd'',
-``method.Rmd'',
-``application.Rmd'',
-``summary.Rmd'',
+``figures\_tables.Rmd'',
+``examples.Rmd'',
+``licenses.Rmd'',
 ``references.Rmd''{]}
 
 Insert the file name of your new chapter in the desired position in this list.
 
-\hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\hypertarget{linking-across-chapters}{%
+\section{Linking across chapters}\label{linking-across-chapters}}
 
-You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
+You can label chapter and section titles using \texttt{\{\#label\}} after them. The labels can be used as cross-references. For example, we can link to Chapter \ref{figtab}. If you do not manually label chapters, there will be automatic labels anyway, e.g., Chapter \ref{examples}.
+
+\hypertarget{advanced-editing}{%
+\section{Advanced editing}\label{advanced-editing}}
+
+The convenient \href{https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf}{Rmarkdown Cheat Sheet} by Rstudio covers most of the knowledge required for advanced Rmarkdown editing. You can print it out and stick it to your wall!
+
+\hypertarget{figtab}{%
+\chapter{Figures and tables}\label{figtab}}
 
 Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
 
@@ -293,31 +388,41 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
 
-\hypertarget{literature}{%
-\chapter{Literature}\label{literature}}
+\hypertarget{examples}{%
+\chapter{Examples}\label{examples}}
 
-Here is a review of existing methods.
+Here are some examples of other GitBooks for courses; if you want to have your GitBook added to the list, please send a \href{https://github.com/cjvanlissa/gitbook-demo/pulls}{Pull Request} (here's \href{https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request}{how to send a pull request}).
 
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\hypertarget{doing-meta-analysis-in-r}{%
+\section{Doing Meta-Analysis in R}\label{doing-meta-analysis-in-r}}
 
-We describe our methods in this chapter.
+\url{http://cjvanlissa.github.io/Doing-Meta-Analysis-in-R}
 
-\hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+A GitBook on doing meta-analysis in R, based on the book `Doing Meta-Analysis in R', by Mathias Harrer, Pim Cuijpers, \& David Ebert, and adapted to focus on the \href{https://cran.r-project.org/web/packages/metafor/index.html}{metafor} package, and exploring heterogeneity using \href{https://cran.r-project.org/web/packages/metaforest/index.html}{metaforest}. The original can be found here: \url{https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+\hypertarget{theory-construction-and-statistical-modeling}{%
+\section{Theory Construction and Statistical Modeling}\label{theory-construction-and-statistical-modeling}}
 
-\hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+\textless{}\url{http://cjvanlissa.github.io/TCSM}
 
-\hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+A GitBook for the course \emph{``Theory Construction and Statistical Modeling''}, with some interesting code, for example: Blocks of answers to the tutorial questions that can be collapsed and expanded.
 
-\hypertarget{final-words}{%
-\chapter{Final Words}\label{final-words}}
+\hypertarget{license-your-gitbook}{%
+\chapter{License your GitBook}\label{license-your-gitbook}}
 
-We have finished a nice book.
+In the spirit of Open Science, it is good to think about making your course materials Open Source. That means that other people can use them. In principle, if you publish materials online without license information, you hold the copyright to those materials. If you want them to be Open Source, you must include a license.
+
+The Creative Commons licenses are typically suitable for course materials. This GitBook, for example, is licensed under CC-BY 4.0. That means you can use and remix it as you like, but you must credit the original source.
+
+You can find \href{https://creativecommons.org/share-your-work/licensing-examples}{more information about the Creative Commons Licenses here}. Specific licenses that might be useful are:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://creativecommons.org/share-your-work/public-domain/cc0/}{CC0 (``No Rights Reserved'')}, everybody can do what they want with your work
+\item
+  \href{https://creativecommons.org/licenses/by/4.0/}{CC-BY 4.0 (``Attribution'')}, everybody can do what they want with your work, but they must credit you
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 
