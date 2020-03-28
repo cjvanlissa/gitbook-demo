@@ -1,0 +1,53 @@
+# Prerequisites
+
+This GitBook is created in Rstudio, using the `bookdown` package. To get your system set up correctly, you have to install several software packages, and register on GitHub. You only have to perform these steps once, and the entire process should take approximately 1 hour if you start from scratch. In case some software is already installed on your system, you can skip related steps. Follow these steps in order:
+
+1. Install R from [cloud.r-project.org](https://cloud.r-project.org/)
+2. Install Rstudio Desktop (Free) from [rstudio.com](https://rstudio.com/products/rstudio/download/#download)
+<!-- ALWAYS RUN AS ADMIN -->
+<!-- install rtools -->
+3. Install Git from [git-scm.com](https://git-scm.com/downloads). Use the default, recommended settings. It is especially important to leave these settings selected:
+    + Git from the command line and also from third party software  
+    + Use the OpenSSL library  
+    <!--*For secure data transfer with GitHub*-->
+    + Checkout Windows-style, commit Unix-style line endings  
+    <!--*This is the preferred setting when collaborating with others on different platforms. Be prepared that, on windows, you will receive harmless notifications about LF to CRLF line endings.  *-->
+    + Enable Git Credential Manager  
+    <!--*For logging in to GitHub*-->
+    + If you run into any trouble, a more comprehensive tutorial on installing Git is available at [happygitwithr.com](https://happygitwithr.com/install-git.html).
+4. Register on GitHub
+    + Go to [github.com](https://github.com/) and click "Sign up". Choose an "Individual", "Free" plan.
+    + Request a [free academic upgrade](https://help.github.com/en/articles/applying-for-an-educator-or-researcher-discount). This allows you to create *private repositories*, which are only visible to you and selected collaborators, and can be made public when your work is published.
+5. Connect Rstudio to Git and Github (for more support, see [this Rstudio article](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), and [this blog post](https://www.r-bloggers.com/rstudio-and-github/))
+    a. Open Rstudio, open the Tools menu, click *Global Options*, and click *Git/SVN*
+    b. Verify that *Enable version control interface for RStudio projects* is selected
+    c. Verify that *Git executable:* shows the location of git.exe. If it is missing, manually fix the location of the file.
+    d. Click *Create RSA Key*. Do not enter a passphrase. Press *Create*. A window with some information will open, which you can close.
+    e. Click *View public key*, and copy the entire text to the clipboard.
+    f. Close Rstudio (it might offer to restart by itself; this is fine)
+    g. Go to [www.github.com](https://www.github.com)
+    h. Click your user icon, click *Settings*, and then select the *SSH and GPG keys* tab.
+    i. Click *New SSH key*. Give it an arbitrary name (e.g., your computer ID), and paste the public key from your clipboard into the box labeled "*Key*".
+    j. Open Rstudio again (unless it restarted by itself)
+6. Install all required packages by running the following code in the Rstudio console. Be prepared for three contingencies:  
+    + If you receive any error saying *There is no package called XYZ*, then run the code `install.packages("XYZ")`  
+    + If you are prompted to update packages, just press `3: None`. Updating packages this way in an interactive session sometimes leads to errors, if the packages are loaded.  
+    + If you see a pop-up dialog asking *Do you want to install from sources the package which needs compilation?*, click *No*. If this leads to errors, then please follow *Step 3* from [this online guide](https://cjvanlissa.github.io/worcs/articles/setup.html), and run `install.packages("devtools")`. This will take a long time, but will allow you to install packages from source.
+
+Run the following code to install the required packages:
+
+```{r eval=FALSE}
+install.packages("bookdown")
+install.packages("tinytex")
+tinytex::install_tinytex()
+git2r::config(global = TRUE, user.name = "your.name", user.email = "your.email")
+```
+
+That's it! Everything should be installed and connected now.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

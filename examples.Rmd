@@ -10,6 +10,6 @@ A GitBook on doing meta-analysis in R, based on the book ‘Doing Meta-Analysis 
 
 ## Theory Construction and Statistical Modeling
 
-<<http://cjvanlissa.github.io/TCSM>
+<http://cjvanlissa.github.io/TCSM>
 
 A GitBook for the course *"Theory Construction and Statistical Modeling"*, with some interesting code, for example: Blocks of answers to the tutorial questions that can be collapsed and expanded.

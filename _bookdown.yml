@@ -1,9 +1,11 @@
-book_filename: "bookdown-demo"
+book_filename: "gitbook-demo"
 rmd_files: ["index.Rmd",
+            "prerequisites.Rmd",
             "get_your_gitbook.Rmd",
             "editing_the_book.Rmd",
             "figures_tables.Rmd",
             "examples.Rmd",
+            "open_educational.Rmd",
             "licenses.Rmd",
             "references.Rmd"]
 output_dir: "docs"

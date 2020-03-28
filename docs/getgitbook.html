@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 License your GitBook | A GitBook Example for Teaching</title>
+  <title>Chapter 3 Get your GitBook | A GitBook Example for Teaching</title>
   <meta name="description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 License your GitBook | A GitBook Example for Teaching" />
+  <meta property="og:title" content="Chapter 3 Get your GitBook | A GitBook Example for Teaching" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="cjvanlissa/gitbook-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 License your GitBook | A GitBook Example for Teaching" />
+  <meta name="twitter:title" content="Chapter 3 Get your GitBook | A GitBook Example for Teaching" />
   
   <meta name="twitter:description" content="This GitBook is an example of a GitBook for teaching. It can be adapted for specific courses. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="open-educational-resources.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="prerequisites.html"/>
+<link rel="next" href="editing-the-book.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -169,15 +169,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="license-your-gitbook" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> License your GitBook</h1>
-<p>In the spirit of Open Science, it is good to think about making your course materials Open Source. That means that other people can use them. In principle, if you publish materials online without license information, you hold the copyright to those materials. If you want them to be Open Source, you must include a license.</p>
-<p>The Creative Commons licenses are typically suitable for course materials. This GitBook, for example, is licensed under CC-BY 4.0. That means you can use and remix it as you like, but you must credit the original source.</p>
-<p>You can find <a href="https://creativecommons.org/share-your-work/licensing-examples">more information about the Creative Commons Licenses here</a>. Specific licenses that might be useful are:</p>
-<ul>
-<li><a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0 (“No Rights Reserved”)</a>, everybody can do what they want with your work</li>
-<li><a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 (“Attribution”)</a>, everybody can do what they want with your work, but they must credit you</li>
-</ul>
+<div id="getgitbook" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Get your GitBook</h1>
+<p>To get your GitBook, you should follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://github.com/cjvanlissa/gitbook-demo" class="uri">https://github.com/cjvanlissa/gitbook-demo</a></li>
+<li>In the top right of the page, click <code>Fork</code>.<br />
+This will copy my <code>gitbook-demo</code> repository to your GitHub account.<br />
+<img src="img/settings.png" /></li>
+<li>My repository is now copied to your account. It is a template repository, which means that you can create a <em>new repository</em> based on this one.</li>
+<li>Create a new repository for your own GitBook. Create one for a course you’ve been wanting to update. In the top-right corner of the GitHub website, click the + icon, and select “New repository”:<br />
+<img src="img/new_repo.png" /></li>
+<li>In the dialog, select the <code>gitbook-demo</code> as “Repository template”, and give the repository an appropriate name for your course. Then, press <code>Create repository</code>:<br />
+<img src="img/from_template.png" /></li>
+<li>Now, go back to Rstudio on your computer. In Rstudio, click <code>File &gt; New Project</code>. A dialog will open. If you set up Rstudio with Git correctly, the dialog should have an option to create a new project from Version control. Click it:<br />
+<img src="img/new_project.png" /></li>
+<li>In the next dialog window, you should copy the URL of the GitHub repository you created in <em>Step 5</em>, like so:<br />
+<img src="img/new_git_project.png" /></li>
+<li>Now, in Rstudio, you can open files for editing and create new files (explained in the next Chapter). Open files by clicking them in the Files editor (usually in the bottom right of Rstudio):<br />
+<img src="img/files_editor.png" /></li>
+<li>After you make a change, it will show up in the Git tab (usually in the top right of Rstudio). You must Commit the change locally, and then Push the change to GitHub to update your repo. To Commit, select the file and click the Commit button. Write a short message to describe the changes you made, then click the Commit button again. Now, press Push to send your commits to GitHub.<br />
+<img src="img/commit_push.png" /></li>
+<li>To render your book as a GitBook, you must “Build” it. In the top-right panel of Rstudio, you see a “Build” tab. In this tab, simply click the “Build Book” button to build your book. You should see a lot of rendering messages, until a window pops up with your brand new GitBook. If you get errors at this stage, you probably made a mistake in preparing your system (see the previous Chapter).<br />
+<img src="img/build_book.png" /></li>
+<li>Building the book generated a lot of new files in the <code>./docs</code> directory. This directory contains the website files for your GitBook. Open the Git tab again, verify that the <code>./docs</code> directory is listed, and Commit and Push all of these new files as described in <em>Step 9</em>.</li>
+<li>There is only one last remaining task: To publish your GitBook on GitHub pages. Once you do this, any change to the <code>./docs</code> folder that you push to GitHub will lead to an immediate update of your GitBook website. Go back to the GitHub page for your Repository. Click on the <code>Settings</code> tab on the top right of the page:<br />
+<img src="img/settings.png" /></li>
+<li>On the Settings page, scroll all the way down until you reach a section called <code>GitHub Pages</code>. There, under the “Source” heading, click the word <code>None</code>, and select <code>master branch /docs folder</code>. When you select it, the page will update, and if you scroll back down to the <code>GitHub Pages</code> section, you will see the URL where your GitBook is published. The first time, it will take a few minutes for your GitBook to come online. When you publish updates to the GitBook however (simply by following <em>Step 11</em> again), the update will be near-instantaneous. The Pages section should now look like this (and that is hopefully the link where you found this book):<br />
+<img src="img/pages_published.png" /></li>
+</ol>
 
 </div>
             </section>
@@ -185,8 +205,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="open-educational-resources.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="prerequisites.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="editing-the-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -217,7 +237,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/licenses.Rmd",
+"link": "https://github.com/cjvanlissa/gitbook-demo/edit/master/get_your_gitbook.Rmd",
 "text": "Edit"
 },
 "history": {
