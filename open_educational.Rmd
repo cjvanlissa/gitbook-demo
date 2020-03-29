@@ -10,3 +10,4 @@ Many universities support Open Educational Resources. Here are just a few (feel 
 * [__Utrecht University Figshare__](https://uu.figshare.com/): Open learning objects from Utrecht University.
 * [__Johns Hopkins University OCW__](https://ocw.jhsph.edu/): Open public health courses and materials.
 * [__University of Pittsburgh OER__](https://pitt.libguides.com/openeducation/biglist): Big List of Open Educational Resources.
+* [__MERLOT__](https://www.merlot.org/merlot/): Online learning and support materials and content creation tools, led by an international community of educators, learners and researchers.
