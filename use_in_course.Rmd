@@ -1,0 +1,13 @@
+# Compatibility with existing systems
+
+Many universities offer digital platforms for learning. You might wish to embed your GitBook within these existing systems. Here are two ways in which you might do that. Currently, this section only discusses BlackBoard, but the same principles should apply to other platforms.
+
+## Add a hyperlink
+
+You can add a link to your GitBook in the BlackBoard course menu by following [this tutorial](https://help.blackboard.com/Learn/Instructor/Course_Content/Create_Content/Create_Course_Materials/Link_to_Websites).
+
+## Embed the whole book
+
+You can add a Blank Page to your BlackBoard course menu, and fill that page with a full-size "iframe" - a web page within the web page. [This tutorial](https://mycampus.maine.edu/web/uc-faculty-portal/education-technology/-/asset_publisher/vEKuFJYvDY5K/content/inserting-an-iframe-into-blackboard?inheritRedirect=false) explains how to do it. It is possible that your university is blocking this feature, however.
+
+

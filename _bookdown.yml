@@ -6,6 +6,7 @@ rmd_files: ["index.Rmd",
             "figures_tables.Rmd",
             "examples.Rmd",
             "open_educational.Rmd",
+            "use_in_course.Rmd",
             "licenses.Rmd",
             "references.Rmd"]
 output_dir: "docs"
