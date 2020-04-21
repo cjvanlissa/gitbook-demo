@@ -13,3 +13,9 @@ A GitBook on doing meta-analysis in R, based on the book ‘Doing Meta-Analysis 
 <http://cjvanlissa.github.io/TCSM>
 
 A GitBook for the course *"Theory Construction and Statistical Modeling"*, with some interesting code, for example: Blocks of answers to the tutorial questions that can be collapsed and expanded.
+
+## Statistics with R
+
+<https://hugoquene.github.io/emlar2020>
+
+A GitBook for a tutorial on *Statistics with R (Basics)*, held as part of the workshop on Experimental Methods in Language Acquisition Research (EMLAR, https://emlar.wp.hum.uu.nl/), Utrecht, on 17 April 2020. This compact introduction helps you with your first steps into R.
